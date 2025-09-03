@@ -29,7 +29,7 @@ export default function RecordForm({ editing, onSaved, onCancel }) {
 
   const { register, handleSubmit, setValue, watch, reset, formState: { errors, isSubmitting } } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: { name: "", phone: "", email: "", address: "", state: "", district: "" },
+    defaultValues: { first: "", last: "", phone: "", email: "", address: "", state: "", district: "" },
   });
 
   const watchState = watch("state");

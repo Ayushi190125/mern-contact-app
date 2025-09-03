@@ -1,8 +1,11 @@
 import axios from "axios";
 
-const BASE = "http://localhost:5000/api";
+const API_BASE = import.meta.env.VITE_API_URL;
 
-export const api = axios.create({ baseURL: BASE });
+
+export const api = axios.create({
+  baseURL: API_BASE,
+});
 
 export const getRecords = (params) => api.get("/records", { params });
 export const addRecord = (data) => api.post("/records", data);
